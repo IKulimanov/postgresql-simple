@@ -1,0 +1,14 @@
+version: '2'
+services:
+  postgres:
+    restart: always
+    image: postgres:10
+    volumes:
+      - ./postgres/postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=${PUSER}
+      - POSTGRES_PASSWORD=${PASSWORD}
+      - POSTGRES_DB=${DB}
+    ports:
+      - "5432:5432"
+      
